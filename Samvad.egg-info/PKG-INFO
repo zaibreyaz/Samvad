@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: Samvad
+Version: 1.0.0
+Summary: A PyTorch-based Seq2Seq model with attention for ontinuous Indian Sign Language Translator System.
+Home-page: https://github.com/zaibreyaz/CSLR.git
+Author: Decodians
+Author-email: samvad@decodians.com
+Keywords: sign language,seq2seq,pytorch,deep learning,CSLR
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: ==3.11.0

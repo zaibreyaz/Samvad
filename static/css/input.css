@@ -1,0 +1,6 @@
+@import url("https://fonts.cdnfonts.com/css/gallient");
+@import url("https://fonts.cdnfonts.com/css/future-straw");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAMVAD</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/output.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico" />
+
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <!-- loader  -->
+    <div
+      id="loading-spinner"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 h-screen flex items-center justify-center hidden"
+    >
+      <div class="loader"></div>
+    </div>
+
+    <div class="bgAnimations h-screen flex flex-col justify-center text-white">
+      <div class="flex flex-col items-center justify-center gap-3">
+        <div class="absolute top-5 left-5">
+          <a href="/">
+            <img
+              src="../static/assets/islLogo.png"
+              class="w-16 h-16 rounded-full"
+            />
+          </a>
+        </div>
+        <h1 class="h-36"></h1>
+        <div
+          class="flex justify-between relative rounded-2xl glassmorphism gap-10 px-5 py-5"
+        >
+          <!-- Input Section -->
+          <div class="flex w-1/2 tracking-wide justify-center">
+            <form
+              class="flex flex-col items-center justify-center gap-5"
+              id="video-form"
+              enctype="multipart/form-data"
+              action="{{ url_for('upload_video') }}"
+              method="post"
+            >
+              <div>
+                <!-- Initial heading -->
+
+                <div
+                  id="placeholder-text"
+                  class="w-[410px] h-[231px] xl:w-[550px] xl:h-[309px] flex flex-col items-center justify-center gap-5"
+                >
+                  <img
+                    src="../static/assets/islLogo.png"
+                    class="w-32 xl:w-40 h-32 xl:h-40 rounded-full"
+                  />
+                  <h1
+                    id="placeholder-text"
+                    class="xl:text-lg uppercase font-pangaia tracking-widest"
+                  >
+                    presents
+                  </h1>
+                  <p
+                    class="tracking-widest font-gallient text-2xl xl:text-3xl font-extrabold"
+                  >
+                    Indian Sign Language Translator
+                  </p>
+                </div>
+
+                <!-- Hidden file input and video element -->
+                <input
+                  type="file"
+                  id="video-upload"
+                  name="file"
+                  accept="video/*"
+                  hidden
+                  onchange="displayVideo(event)"
+                  required
+                />
+                <div class="relative">
+                  <video
+                    id="video-preview"
+                    controls
+                    class="w-[410px] h-[231px] xl:w-[550px] xl:h-[309px] rounded-xl shadow-lg hidden"
+                  ></video>
+                  <div id="close-button" class="hidden">
+                    <a
+                      href="/"
+                      class="absolute top-0 -right-10 text-white hover:bg-black rounded-full duration-500 p-2"
+                    >
+                      <i class="fa-solid fa-xmark text-2xl"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <div class="btn cursor-pointer">
+                  <label for="video-upload" class="btnEffects cursor-pointer"
+                    >Upload Video</label
+                  >
+                </div>
+
+                <button
+                  type="submit"
+                  id="submit-button"
+                  class="btn cursor-pointer"
+                >
+                  <div class="btnEffects cursor-pointer">Submit Video</div>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Output Section -->
+
+          <div
+            class="w-[410px] xl:w-[550px] relative h-full flex flex-col items-center justify-center rounded-xl shadow-lg outputBorder"
+          >
+            <div class="absolute -top-[10.7rem] xl:-top-[11.7rem]">
+              <img
+                src="../static/assets/vectorBoard.png"
+                class="w-48 xl:w-56 h-48 xl:h-56"
+              />
+            </div>
+            <div class="flex text-xl font-serif capitalize font-semibold">
+              {% if success_message %}
+              <h1 id="output-text" class="text-center">
+                {{ success_message }}
+              </h1>
+              {% else %}
+              <p id="output-text" class="text-center"></p>
+              {% endif %}
+            </div>
+            <div class="absolute flex gap-4 top-3 left-3">
+              <i class="fa-solid fa-globe cursor-pointer"></i>
+              <i class="fa-solid fa-volume-high cursor-pointer"></i>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="font-pangaia font-semibold">
+          © 2024 SAMVAD. All rights reserved.
+        </h1>
+      </div>
+    </div>
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>
