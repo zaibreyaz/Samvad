@@ -12,7 +12,7 @@
 
 1. **Clone the Repository**.
    ```bash
-   git clone https://github.com/zaibreyaz/CSLR.git
+   git clone https://github.com/zaibreyaz/Samvad.git
    cd CSLR
    ```
 

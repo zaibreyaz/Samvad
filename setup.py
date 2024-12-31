@@ -36,7 +36,7 @@ setup(
     # long_description_content_type='text/markdown',
     author='Decodians',
     author_email='samvad@decodians.com',
-    url='https://github.com/zaibreyaz/CSLR.git',
+    url='https://github.com/zaibreyaz/Samvad.git',
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
