@@ -13,7 +13,7 @@
 1. **Clone the Repository**.
    ```bash
    git clone https://github.com/zaibreyaz/Samvad.git
-   cd CSLR
+   cd Samvad
    ```
 
 2. **Open the Terminal** and **split it into two panes** for parallel setup.
