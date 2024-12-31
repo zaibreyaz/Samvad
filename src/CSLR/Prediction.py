@@ -127,7 +127,7 @@ class VideoPrediction:
         # Initialize inference variables
         sos_token = self.vocab["<SOS>"]
         eos_token = self.vocab["<EOS>"]
-        max_length = 4
+        max_length = 3
         predicted_sentence = []
 
         with torch.no_grad():
